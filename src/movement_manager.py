@@ -20,7 +20,7 @@ import tf
 Frep = [0,0]
 
 x_g = 1.0
-y_g = 0.0
+y_g = 1.0
 th_g = np.arctan2(y_g, x_g)
 
 th_k = 0.0
