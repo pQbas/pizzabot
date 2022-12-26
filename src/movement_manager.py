@@ -112,7 +112,7 @@ if __name__=='__main__':
         
         # condicion de movimiento
         else:
-            if np.abs(err_th_k) > 0.4: # se mueve angularmente si existe error angular
+            if np.abs(err_th_k) > 0.8: # se mueve angularmente si existe error angular
                 move_cmd.angular.z = angular_velocity
                 move_cmd.linear.x = 0.0
             else:                      # se mueve linealmente si existe error linear
@@ -120,6 +120,7 @@ if __name__=='__main__':
                 move_cmd.angular.z = 0.0
         
         distance_error_pub.publish(distance_error)
+
         pub_cmd_vel.publish(move_cmd)
 
             
