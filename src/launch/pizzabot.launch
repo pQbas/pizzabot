@@ -4,7 +4,7 @@
 <node pkg="rosserial_python" type="serial_node.py" name="nano_left" args="/dev/ttyUSB2" />
 <node pkg="pizzabot" type="motor_controller.py" name="motor_controller"/>
 <node pkg="pizzabot" type="motor_odometry.py" name="motor_odometry"/>
-<node pkg="pizzabot" type="movement_manager.py" name="movement_manager"/>
+<!-- <node pkg="pizzabot" type="movement_manager.py" name="movement_manager"/> -->
 <!-- <node pkg="pizzabot" type="campos_potenciales.py" name="campos_potenciales"/> -->
 
 <!-- <node pkg="pizzabot" type="goal_publisher.py" name="goal_publisher"/> -->
