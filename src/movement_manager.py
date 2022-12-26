@@ -59,6 +59,7 @@ def get_pose(data):
 
 def get_repulsion_force(data):
     global Frep
+    Frep = [0,0]
     Frep = data.data
 
 
@@ -111,7 +112,7 @@ if __name__=='__main__':
         
         # condicion de movimiento
         else:
-            if np.abs(err_th_k) > 0.3: # se mueve angularmente si existe error angular
+            if np.abs(err_th_k) > 0.4: # se mueve angularmente si existe error angular
                 move_cmd.angular.z = angular_velocity
                 move_cmd.linear.x = 0.0
             else:                      # se mueve linealmente si existe error linear
