@@ -126,7 +126,7 @@ if __name__=='__main__':
         # angular_error_pub.publish(err_th_k)
 
         move_cmd.linear.x = 0
-        move_cmd.angular.z = 1.3
+        move_cmd.angular.z = 1.7
         pub_cmd_vel.publish(move_cmd)
 
             
