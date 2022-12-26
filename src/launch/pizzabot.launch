@@ -1,7 +1,7 @@
 <launch>
 <!-- <include file="$(find rplidar_ros)/launch/rplidar.launch" /> -->
-<node pkg="rosserial_python" type="serial_node.py" name="nano_rigth" args="/dev/ttyUSB1" />
-<node pkg="rosserial_python" type="serial_node.py" name="nano_left" args="/dev/ttyUSB2" />
+<node pkg="rosserial_python" type="serial_node.py" name="nano_rigth" args="/dev/ttyUSB0" />
+<node pkg="rosserial_python" type="serial_node.py" name="nano_left" args="/dev/ttyUSB1" />
 <node pkg="pizzabot" type="motor_controller.py" name="motor_controller"/>
 <node pkg="pizzabot" type="motor_odometry.py" name="motor_odometry"/>
 <!-- <node pkg="pizzabot" type="movement_manager.py" name="movement_manager"/> -->
