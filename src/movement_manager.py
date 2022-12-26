@@ -124,9 +124,15 @@ if __name__=='__main__':
         
         # distance_error_pub.publish(distance_error)
         # angular_error_pub.publish(err_th_k)
-        rospy.loginfo(err_th_k)
-        move_cmd.linear.x = 0
-        move_cmd.angular.z = 1.7
+        rospy.loginfo(error_x )
+        
+        if error_x > 0.4:
+            move_cmd.linear.x = 0.5
+            move_cmd.angular.z = 0.0
+        else:
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = 0.0
+        
         pub_cmd_vel.publish(move_cmd)
 
             
