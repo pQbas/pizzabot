@@ -81,8 +81,8 @@ if __name__=='__main__':
     while not rospy.is_shutdown():
 
         # calcula el error en x,y
-        error_x = x_g - x_k + abs(Frep[0])
-        error_y = y_g - y_k + abs(Frep[1])
+        error_x = x_g - x_k #+ abs(Frep[0])
+        error_y = y_g - y_k #+ abs(Frep[1])
         
         move_cmd = Twist()
         th_g = np.arctan2(error_y, error_x)
