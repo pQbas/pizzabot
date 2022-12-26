@@ -17,7 +17,7 @@ import time
 import rospy
 import math as m
 import numpy as np
-import cv2
+# import cv2
 
 
 
@@ -117,29 +117,29 @@ ranges = []
 laser_angles = []
 
 
-def draw_arrow(image, magnitud, angle, K):
+# def draw_arrow(image, magnitud, angle, K):
 
-    #image = np.zeros([900,900])
-    magnitud = K*magnitud
-    start_point = (450, 450)
-    end_point = (int(start_point[0] + magnitud*m.cos(angle)) , 
-                int(start_point[1] + magnitud*m.sin(angle)))
-    color = (255, 255, 255)
-    thickness = 1
-    return cv2.arrowedLine(image, start_point, end_point,color, thickness)
+#     #image = np.zeros([900,900])
+#     magnitud = K*magnitud
+#     start_point = (450, 450)
+#     end_point = (int(start_point[0] + magnitud*m.cos(angle)) , 
+#                 int(start_point[1] + magnitud*m.sin(angle)))
+#     color = (255, 255, 255)
+#     thickness = 1
+#     return cv2.arrowedLine(image, start_point, end_point,color, thickness)
 
 
-def draw_point(image, pointx, pointy, k):
+# def draw_point(image, pointx, pointy, k):
 
-    #image = np.zeros([900,900])
-    start_point = (450, 450)
-    end_point = (int(start_point[0] + k*pointx) , 
-                int(start_point[1] + k*pointy))
+#     #image = np.zeros([900,900])
+#     start_point = (450, 450)
+#     end_point = (int(start_point[0] + k*pointx) , 
+#                 int(start_point[1] + k*pointy))
 
-    color = (255, 255, 255)
-    thickness = 1
+#     color = (255, 255, 255)
+#     thickness = 1
 
-    return cv2.circle(image, end_point, 1, color, thickness)
+#     return cv2.circle(image, end_point, 1, color, thickness)
 
 
 def lidar(msg):
@@ -191,21 +191,21 @@ def lidar(msg):
 
 
     # plotting the Frep, Fatt
-    for Fx, Fy in Frep:
-        Fmag = m.dist([Fx,0], [0,Fy])
-        Fangle = m.atan2(Fy,Fx)
-        image = draw_arrow(image, Fmag, Fangle, 200)
+    # for Fx, Fy in Frep:
+    #     Fmag = m.dist([Fx,0], [0,Fy])
+    #     Fangle = m.atan2(Fy,Fx)
+    #     image = draw_arrow(image, Fmag, Fangle, 200)
 
-    for Fx,Fy in Fatt:
-        Fmag = m.dist([Fx,0], [0,Fy])
-        Fangle = m.atan2(Fy,Fx)
-        image = draw_arrow(image, Fmag, Fangle, 200)
+    # for Fx,Fy in Fatt:
+    #     Fmag = m.dist([Fx,0], [0,Fy])
+    #     Fangle = m.atan2(Fy,Fx)
+    #     image = draw_arrow(image, Fmag, Fangle, 200)
 
-    for px, py in points_in_range:
-        image = draw_point(image, px, py, 100)
+    # for px, py in points_in_range:
+    #     image = draw_point(image, px, py, 100)
 
-    cv2.imshow('arrow', image)
-    cv2.waitKey(1)
+    # cv2.imshow('arrow', image)
+    # cv2.waitKey(1)
 
 
 Frep = [[0,0]]
