@@ -19,8 +19,8 @@ import tf
 
 Frep = [0,0]
 
-x_g = 2.0
-y_g = 2.0
+x_g = 1.0
+y_g = 0.0
 th_g = np.arctan2(y_g, x_g)
 
 th_k = 0.0
@@ -113,7 +113,7 @@ if __name__=='__main__':
         
         # condicion de movimiento
         else:
-            if np.abs(err_th_k) > 0.8: # se mueve angularmente si existe error angular
+            if np.abs(err_th_k) > 0.6: # se mueve angularmente si existe error angular
                 move_cmd.angular.z = angular_velocity
                 move_cmd.linear.x = 0.0
             else:                      # se mueve linealmente si existe error linear
