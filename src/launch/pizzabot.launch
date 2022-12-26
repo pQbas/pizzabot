@@ -1,0 +1,13 @@
+<launch>
+<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+<node pkg="rosserial_python" type="serial_node.py" name="nano_rigth" args="/dev/ttyUSB1" />
+<node pkg="rosserial_python" type="serial_node.py" name="nano_left" args="/dev/ttyUSB2" />
+<node pkg="pizzabot" type="motor_controller.py" name="motor_controller"/>
+<node pkg="pizzabot" type="motor_odometry.py" name="motor_odometry"/>
+<node pkg="pizzabot" type="movement_manager.py" name="movement_manager"/>
+<node pkg="pizzabot" type="campos_potenciales.py" name="campos_potenciales"/>
+
+<!-- <node pkg="pizzabot" type="goal_publisher.py" name="goal_publisher"/> -->
+<!-- <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.1 0 0.1 3.1415 0 0 base_link laser 10" /> -->
+
+</launch>

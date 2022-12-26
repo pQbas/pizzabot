@@ -1,0 +1,18 @@
+
+SPEED CONFIGURATION  (aprox)
+----------------------------
+
+	rpm
+motor : [20 - 71]    --> cargar baterias!!!
+        [20 - 49]
+
+        m/s     
+SPEED : [0.06196 - 0.22 ] 
+
+
+	rad/s
+TURN  : [0.617 -  2.00]
+
+
+
+
