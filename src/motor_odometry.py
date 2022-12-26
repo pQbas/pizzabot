@@ -158,8 +158,11 @@ if __name__=='__main__':
         v_right_wheel = r*2*np.pi*rpm_right_wheel/60
         v_left_wheel = r*2*np.pi*rpm_left_wheel/60
 
-        vx = (v_right_wheel + v_left_wheel)/2
-        vth = (v_right_wheel - v_left_wheel)/d        
+        #vx = (v_right_wheel + v_left_wheel)/2
+        vx = (v_right_wheel + v_left_wheel)
+        #vth = (v_right_wheel - v_left_wheel)/d
+        vth = (2/d)*(v_right_wheel - v_left_wheel)
+        
 
 
         #print("right_wheel:",rpm_right_wheel,"left_wheel",rpm_left_wheel)        

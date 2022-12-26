@@ -25,8 +25,10 @@ def compute_rpms(data):
     vx = data.linear.x
     wz = data.angular.z
 
-    v_right_wheel = vx + wz*d/2
-    v_left_wheel = vx - wz*d/2
+    #v_right_wheel = (vx + wz*d/2)
+    v_right_wheel = vx/2 + wz*d/4
+    #v_left_wheel = vx - wz*d/2
+    v_left_wheel = vx/2 - wz*d/4
 
     rpm_right_wheel = int(v_right_wheel*60/(r*2*np.pi))
     rpm_left_wheel = int(v_left_wheel*60/(r*2*np.pi))
