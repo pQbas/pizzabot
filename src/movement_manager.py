@@ -72,6 +72,7 @@ if __name__=='__main__':
     rospy.on_shutdown(exit)
     
     distance_error_pub = rospy.Publisher('/error_distance', Float32, queue_size=1)
+    angular_error_pub = rospy.Publisher('/error_angular', Float32, queue_size=1)
     pub_cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     
     rate_cmd_vel = rospy.Rate(80)
@@ -120,6 +121,7 @@ if __name__=='__main__':
                 move_cmd.angular.z = 0.0
         
         distance_error_pub.publish(distance_error)
+        angular_error_pub.publish(err_th_k)
 
         pub_cmd_vel.publish(move_cmd)
 
