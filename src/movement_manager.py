@@ -91,17 +91,17 @@ if __name__=='__main__':
         err_th_k = th_g - th_k
 
 
-        distance_error = np.sqrt((error_x)**2 + (error_y)**2)
-        linear_velocity = 0.015 * distance_error
+        # distance_error = np.sqrt((error_x)**2 + (error_y)**2)
+        # linear_velocity = 0.015 * distance_error
 
 
-        # limite superior e inferior a la velocidad linear
-        if linear_velocity > 0.5: 
-            linear_velocity = 0.5
-        elif linear_velocity < 0.3:
-            linear_velocity = 0.3
+        # # limite superior e inferior a la velocidad linear
+        # if linear_velocity > 0.5: 
+        #     linear_velocity = 0.5
+        # elif linear_velocity < 0.3:
+        #     linear_velocity = 0.3
 
-        # velocidad angular constante, dependiendo del signo
+        # # velocidad angular constante, dependiendo del signo
         if err_th_k>0:
             #angular_velocity = 0.6
             angular_velocity = 1.21
@@ -109,22 +109,24 @@ if __name__=='__main__':
             #angular_velocity = -0.6
             angular_velocity = -1.21
 
-        # condicion de paro
-        if distance_error < 0.1:
-            move_cmd.linear.x = 0.0
+        # # condicion de paro
+        # if distance_error < 0.1:
+        #     move_cmd.linear.x = 0.0
         
-        # condicion de movimiento
-        else:
-            if np.abs(err_th_k) > 0.6: # se mueve angularmente si existe error angular
-                move_cmd.angular.z = angular_velocity
-                move_cmd.linear.x = 0.0
-            else:                      # se mueve linealmente si existe error linear
-                move_cmd.linear.x = linear_velocity
-                move_cmd.angular.z = 0.0
+        # # condicion de movimiento
+        # else:
+        #     if np.abs(err_th_k) > 0.6: # se mueve angularmente si existe error angular
+        #         move_cmd.angular.z = angular_velocity
+        #         move_cmd.linear.x = 0.0
+        #     else:                      # se mueve linealmente si existe error linear
+        #         move_cmd.linear.x = linear_velocity
+        #         move_cmd.angular.z = 0.0
         
-        distance_error_pub.publish(distance_error)
-        angular_error_pub.publish(err_th_k)
+        # distance_error_pub.publish(distance_error)
+        # angular_error_pub.publish(err_th_k)
 
+        move_cmd.linear.x = 0
+        move_cmd.angular.z = 1.3
         pub_cmd_vel.publish(move_cmd)
 
             
