@@ -75,7 +75,7 @@ if __name__=='__main__':
     angular_error_pub = rospy.Publisher('/error_angular', Float32, queue_size=1)
     pub_cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     
-    rate_cmd_vel = rospy.Rate(80)
+    rate_cmd_vel = rospy.Rate(20)
     move_cmd = Twist()
     move_cmd.linear.x = 0.0
     move_cmd.angular.z = 0.0
