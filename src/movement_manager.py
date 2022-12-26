@@ -96,16 +96,18 @@ if __name__=='__main__':
 
 
         # limite superior e inferior a la velocidad linear
-        if linear_velocity > 0.2: 
-            linear_velocity = 0.2
-        elif linear_velocity < 0.15:
-            linear_velocity = 0.15
+        if linear_velocity > 0.5: 
+            linear_velocity = 0.5
+        elif linear_velocity < 0.3:
+            linear_velocity = 0.3
 
         # velocidad angular constante, dependiendo del signo
         if err_th_k>0:
-            angular_velocity = 0.6
+            #angular_velocity = 0.6
+            angular_velocity = 1.21
         else:
-            angular_velocity = -0.6
+            #angular_velocity = -0.6
+            angular_velocity = -1.21
 
         # condicion de paro
         if distance_error < 0.1:
