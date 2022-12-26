@@ -107,7 +107,7 @@ if __name__=='__main__':
             angular_velocity = -0.6
 
         # condicion de paro
-        if distance_error < 0.05:
+        if distance_error < 0.1:
             move_cmd.linear.x = 0.0
         
         # condicion de movimiento
