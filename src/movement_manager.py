@@ -98,8 +98,8 @@ if __name__=='__main__':
         # limite superior e inferior a la velocidad linear
         if linear_velocity > 0.2: 
             linear_velocity = 0.2
-        elif linear_velocity < 0.1:
-            linear_velocity = 0.1
+        elif linear_velocity < 0.15:
+            linear_velocity = 0.15
 
         # velocidad angular constante, dependiendo del signo
         if err_th_k>0:
