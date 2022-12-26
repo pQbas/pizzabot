@@ -176,9 +176,9 @@ if __name__=='__main__':
         vth_k = vth
         vx_k = vx
         
-        if th_k > 2*np.pi: th_k = 0.0
+        if th_k > 2*np.pi: th_k = th_k%(2*np.pi)
         
-        if th_k < 0: th_k = 2*np.pi 
+        if th_k < 0: th_k = 2*np.pi - th_k
         
         
         if (t1.to_sec() >= t0.to_sec() + Ts):
