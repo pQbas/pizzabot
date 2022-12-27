@@ -67,7 +67,7 @@ def get_repulsion_force(data):
 if __name__=='__main__': 
     rospy.init_node('movement_manager', anonymous=True)
     rospy.Subscriber("/odom", Odometry, get_pose)
-    #rospy.Subscriber("/goal_position", Float64MultiArray, get_goal)
+    rospy.Subscriber("/goal_position", Float64MultiArray, get_goal)
     #rospy.Subscriber("/repulsion_force", Float64MultiArray, get_repulsion_force)
     rospy.on_shutdown(exit)
     
